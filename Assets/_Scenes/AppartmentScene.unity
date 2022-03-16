@@ -203,7 +203,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5046583, y: 1}
+    m_SensorSize: {x: 1.4875777, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -238,7 +238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 244376983}
   - component: {fileID: 244376984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ClickCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,6 +425,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 580f84193f6c9524fa81248a43f5e7dd, type: 3}
+--- !u!1 &1181606314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1181606316}
+  - component: {fileID: 1181606315}
+  m_Layer: 0
+  m_Name: ScriptableDataTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1181606315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181606314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 998af4aa035283c40936b2cde4dc53e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sInt: {fileID: 11400000, guid: 0845335c723abb543aeb01c6f06fda27, type: 2}
+--- !u!4 &1181606316
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181606314}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.33160338, y: -0.08164172, z: 0.010666013}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1186907527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -616,6 +661,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b41e0c5ab067f834cb407a75890b5ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testEvent: {fileID: 11400000, guid: aecf3915da412ef49a03ecbfe2e81d47, type: 2}
+  sInt: {fileID: 11400000, guid: 0845335c723abb543aeb01c6f06fda27, type: 2}
 --- !u!1 &1340808027
 GameObject:
   m_ObjectHideFlags: 0

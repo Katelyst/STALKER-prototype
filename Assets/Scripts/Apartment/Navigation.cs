@@ -7,11 +7,19 @@ using UnityEngine.InputSystem;
 public class Navigation : MonoBehaviour
 {
     private PlayerInputs _input;
-
+    private int layerMask;
     private float distance = 50f;
+
+    // just for scriptable data testing
+    [SerializeField]
+    private ScriptableData.ScriptableEvent<int> testEvent;
+    [SerializeField]
+    private ScriptableData.SDInt sInt;
+
 
     private void Awake()
     {
+        layerMask = LayerMask.GetMask("Clickable");
         _input = GetComponent<PlayerInputs>();
     }
 
@@ -26,7 +34,7 @@ public class Navigation : MonoBehaviour
             //create a ray cast and set it to the mouses cursor position in game
             Ray ray = Camera.main.ScreenPointToRay(_input.look);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, distance))
+            if (Physics.Raycast(ray, out hit, distance, layerMask))
             {
                 //draw invisible ray cast/vector
                 Debug.DrawLine(ray.origin, hit.point);
@@ -34,6 +42,8 @@ public class Navigation : MonoBehaviour
                 Debug.Log(hit.transform.gameObject.name);
                 //hit.transform.parent.gameObject.name;
 
+                //testEvent.Invoke(5);
+                sInt.Value += 5;
             }
         }
     }
