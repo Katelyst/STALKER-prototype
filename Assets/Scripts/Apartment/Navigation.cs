@@ -12,7 +12,7 @@ public class Navigation : MonoBehaviour
 
     // just for scriptable data testing
     [SerializeField]
-    private ScriptableData.ScriptableEvent<int> testEvent;
+    private ScriptableData.ScriptableEvent<ScriptableData.SDInt> testEvent;
     [SerializeField]
     private ScriptableData.SDInt sInt;
 
@@ -42,8 +42,8 @@ public class Navigation : MonoBehaviour
                 Debug.Log(hit.transform.gameObject.name);
                 //hit.transform.parent.gameObject.name;
 
-                //testEvent.Invoke(5);
-                sInt.Value += 5;
+                testEvent.Invoke(sInt);
+                //sInt.Value += 5;
             }
         }
     }
