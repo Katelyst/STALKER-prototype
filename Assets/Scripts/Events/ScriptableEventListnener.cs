@@ -16,7 +16,7 @@ public class ScriptableEventListnener : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(sInt.Value);
+        //Debug.Log(sInt.Value);
     }
 
     private void OnMaxje()

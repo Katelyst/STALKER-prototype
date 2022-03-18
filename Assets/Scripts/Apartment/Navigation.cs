@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using ScriptableData;
 
 [RequireComponent(typeof(PlayerInput))]
 public class Navigation : MonoBehaviour
@@ -11,11 +12,15 @@ public class Navigation : MonoBehaviour
     private float distance = 50f;
 
     // just for scriptable data testing
-    [SerializeField]
-    private ScriptableData.ScriptableEvent<ScriptableData.SDInt> testEvent;
-    [SerializeField]
-    private ScriptableData.SDInt sInt;
+    // [SerializeField]
+    // //private ScriptableData.ScriptableEvent<ScriptableData.SDInt> testEvent;
+    // [SerializeField]
+    // private ScriptableData.SDInt sInt;
 
+    public ScriptableEvent testEvent; 
+    public SEBool testBoolEvent; 
+
+    //private bool flipflop = false;
 
     private void Awake()
     {
@@ -37,12 +42,24 @@ public class Navigation : MonoBehaviour
             if (Physics.Raycast(ray, out hit, distance, layerMask))
             {
                 //draw invisible ray cast/vector
-                Debug.DrawLine(ray.origin, hit.point);
+                //Debug.DrawLine(ray.origin, hit.point);
                 //log hit area to the console
-                Debug.Log(hit.transform.gameObject.name);
+                //Debug.Log(hit.transform.gameObject.name);
                 //hit.transform.parent.gameObject.name;
 
-                testEvent.Invoke(sInt);
+                //check if hit object has a IInteractable interface
+                IInteractable obj = hit.transform.gameObject.GetComponent<IInteractable>();
+                if(obj != null)
+                {
+                    obj.OnClick();
+
+                    // testBoolEvent.Invoke(flipflop);
+                    // flipflop = !flipflop;
+                    // testEvent.Invoke();
+
+                }
+
+                //testEvent.Invoke(sInt);
                 //sInt.Value += 5;
             }
         }
