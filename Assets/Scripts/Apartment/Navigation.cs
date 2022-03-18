@@ -17,8 +17,8 @@ public class Navigation : MonoBehaviour
     // [SerializeField]
     // private ScriptableData.SDInt sInt;
 
-    public ScriptableEvent testEvent; 
-    public SEBool testBoolEvent; 
+    //public ScriptableEvent testEvent; 
+    //public SEBool testBoolEvent; 
 
     //private bool flipflop = false;
 
@@ -32,7 +32,7 @@ public class Navigation : MonoBehaviour
     {
         if(_input.click)
         {
-            Debug.Log("Player clicked at: " + _input.look + " Coordinates");
+            //Debug.Log("Player clicked at: " + _input.look + " Coordinates");
             _input.click = false;
             //translate to world pos, see if player clicked letter pile
             //or other objects in world

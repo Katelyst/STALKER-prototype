@@ -19,7 +19,7 @@ public class Letterpile : MonoBehaviour, IInteractable
         currID++;
         Sample(currID);
         
-        Debug.Log("Clicked letterpile");
+        //Debug.Log("Clicked letterpile");
         //fire event
         clickLetterEvent.Invoke(true);
         //listen for it on canvas

@@ -33,7 +33,7 @@ public class LetterHandler : MonoBehaviour
 
     private void ShowEnvelope(bool show)
     {
-        Debug.Log("Got event, open envelope!");
+        //Debug.Log("Got event, open envelope!");
         //clickLetterPileEvent.OnScriptableEvent -= ShowLetter; //prevent duplicates
         envelope.SetActive(true);
         openLetterButton.SetActive(true);
