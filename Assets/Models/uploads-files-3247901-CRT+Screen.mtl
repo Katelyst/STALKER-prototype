@@ -1,0 +1,58 @@
+# Blender MTL File: 'CRT Screen.blend'
+# Material Count: 5
+
+newmtl Keyboard_Plastic
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.559598 0.516653 0.437795
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Ns Textures 4K\\Keyboard_Plastic_Roughness.png
+
+newmtl Monitor_White_Plastic
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Textures 4K\\Monitor_White_Plastic_Normal_DirectX.png
+map_Ns Textures 4K\\Monitor_White_Plastic_Roughness.png
+
+newmtl Mouse_Plastic
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Textures 4K\\Mouse_Normal_DirectX.png
+map_Ns Textures 4K\\Mouse_Roughness.png
+
+newmtl Screen_Surface
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.003783 0.003783 0.003783
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Ns Textures 4K\\Screen_Surface_Roughness.png
+
+newmtl Win_98_Screen
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
