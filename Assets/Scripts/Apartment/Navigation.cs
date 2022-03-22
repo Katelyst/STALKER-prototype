@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using ScriptableData;
+using Cinemachine;
+using System.Linq;
 
 [RequireComponent(typeof(PlayerInput))]
 public class Navigation : MonoBehaviour
@@ -10,6 +12,11 @@ public class Navigation : MonoBehaviour
     private PlayerInputs _input;
     private int layerMask;
     private float distance = 50f;
+
+    [SerializeField]
+    private List<CinemachineVirtualCamera> virtualCamsInScene = new List<CinemachineVirtualCamera>();
+
+    private CinemachineVirtualCamera prevVCam;
 
     // just for scriptable data testing
     // [SerializeField]
@@ -26,6 +33,8 @@ public class Navigation : MonoBehaviour
     {
         layerMask = LayerMask.GetMask("Clickable");
         _input = GetComponent<PlayerInputs>();
+        //SortCameras();
+        prevVCam = virtualCamsInScene.ElementAt(0);
     }
 
     void Update()
@@ -51,8 +60,9 @@ public class Navigation : MonoBehaviour
                 IInteractable obj = hit.transform.gameObject.GetComponent<IInteractable>();
                 if(obj != null)
                 {
+                    prevVCam.Priority = 0;
                     obj.OnClick();
-
+                    prevVCam = obj.GetVCam();
                     // testBoolEvent.Invoke(flipflop);
                     // flipflop = !flipflop;
                     // testEvent.Invoke();
@@ -63,5 +73,33 @@ public class Navigation : MonoBehaviour
                 //sInt.Value += 5;
             }
         }
+        else if(_input.rightClick)
+        {
+            _input.rightClick = false;
+            //should add lock states for this, such as when reading letters etc. busy work tho
+            ResetVCamPriority();
+        }
+        //SortCameras();
+
+        //could make scriptable data that holds index to vcam in list
+        // or could make scriptable data that holds keyvaluepair of vcam and index??
+    }
+
+    public void ResetVCamPriority()
+    {
+        foreach(CinemachineVirtualCamera virtCam in virtualCamsInScene)
+        {
+            virtCam.Priority = 0;
+        }
+        //set appartment overview camera (SHOULD be first element) to highest priority
+        virtualCamsInScene.ElementAt(0).Priority = 1;
+    }
+
+    /// <summary>
+    /// Sorts camera in order of priority. Highest priority is first element in list
+    /// </summary>
+    void SortCameras()
+    {
+        virtualCamsInScene = virtualCamsInScene.OrderByDescending(x => x.Priority).ToList();
     }
 }
