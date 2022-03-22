@@ -18,7 +18,7 @@ public class LetterHandler : MonoBehaviour
     [SerializeField]
     private GameObject openedLetter;
     [SerializeField]
-    private TextMeshProUGUI letterText;
+    private TextMeshProUGUI letterText; //edit with new day letter text
     [SerializeField]
     private SEBool clickLetterPileEvent;
     [SerializeField]
@@ -33,6 +33,7 @@ public class LetterHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UpdateText(dayIndex.Value);
         clickLetterPileEvent.OnScriptableEvent += ShowEnvelope;
         OpenLetterEvent.OnScriptableEvent += OpenLetter;
         dayIndex.OnValueChangedEvent += DayChanged;
@@ -65,11 +66,14 @@ public class LetterHandler : MonoBehaviour
 
     private void DayChanged(int i)
     {
-        Debug.Log("Switched to the next day");
+        //Debug.Log("Switched to the next day");
+        UpdateText(i);
     }
 
-    private void UpdateText()
+    private void UpdateText(int newDay)
     {
         Debug.Log("Update text now");
+        envelopeText.text = texts[newDay].letterSender[0];
+        letterText.text = texts[newDay].letters[0];
     }
 }

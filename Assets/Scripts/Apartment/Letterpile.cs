@@ -26,21 +26,14 @@ public class Letterpile : MonoBehaviour, IInteractable
         //Debug.Log("Clicked letterpile");
         //fire event
         onClickEvent.Invoke(true);
-        Debug.Log("Fire event");
-        //listen for it on canvas
-        //enable envelope graphic
-        //click (or do something else) to open envelope
-        //read letter contents
-
         //should have an unfocus property tho
         vCam.Priority = 5;
-
     }
 
 
     public void Sample(int id)
     {
-        Debug.Log("Clicked letterpile: " + currID + " times!");
+        //Debug.Log("Clicked letterpile: " + currID + " times!");
     }
 
     public CinemachineVirtualCamera GetVCam()

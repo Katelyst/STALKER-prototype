@@ -1815,6 +1815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0222aebed02347846ade1a5031b3e5a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeTime: 5
   fadedEvent: {fileID: 11400000, guid: d46acfbb8c5f4754ab5498c32b43316d, type: 2}
 --- !u!1 &1630090106
 GameObject:
