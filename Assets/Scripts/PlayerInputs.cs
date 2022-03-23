@@ -11,6 +11,7 @@ public class PlayerInputs : MonoBehaviour
 	public bool jump;
 	public bool sprint;
 	public bool click;
+	public bool rightClick;
 
 	[Header("Movement Settings")]
 	public bool analogMovement;
@@ -49,6 +50,11 @@ public class PlayerInputs : MonoBehaviour
     {
 		ClickInput(value.isPressed);
     }
+
+	public void OnRightClick(InputValue value)
+    {
+		RightClickInput(value.isPressed);
+	}
 #else
 // old input sys if we do decide to have it (most likely wont)...
 #endif
@@ -77,6 +83,11 @@ public class PlayerInputs : MonoBehaviour
 	private void ClickInput(bool newClickState)
     {
 		click = newClickState;
+    }
+
+	private void RightClickInput(bool newClickState)
+    {
+		rightClick = newClickState;
     }
 
 #if !UNITY_IOS || !UNITY_ANDROID

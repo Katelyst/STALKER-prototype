@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteAlways]
 public class CameraFacer : MonoBehaviour
 {
     [SerializeField][Tooltip("The transform to face, probably camera. Not required, if left null object will face main camera")]

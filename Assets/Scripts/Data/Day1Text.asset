@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570a53be8de0d624aac6ab0275c3bbfd, type: 3}
+  m_Name: Day1Text
+  m_EditorClassIdentifier: 
+  letterSender:
+  - A silent admirer
+  letters:
+  - "Hello, my old friend,\r\n\r\nIt seems I didn't make myself clear enough. You
+    read my e-mail, didn't you? Or did you unplug all electric devices in insanity?
+    Don't think you can escape me by turning your screen off...\r\n\r\nLet me make
+    myself clear:\r\nI told you to come to work, and you didn't.\r\nCOME. TO. WORK.
+    TOMORROW.\r\nWE. WILL SEE EACH OTHER EYE TO EYE\r\nYou will pay for what you
+    did if you don't do it.\r\nYou brought this on yourself. \r\nThis is your fault.\r\n\r\nPs.
+    I'm looking for some fur for a doormat, do you know a good spot?"
+  emails:
+  - "Let me make myself clear: \nI told you to come to work, and you didn't. \nCOME.
+    TO. WORK. TOMORROW. \nWE. WILL SEE EACH OTHER EYE TO EYE You will pay for what
+    you did if you don't do it. \nYou brought this on yourself.  "
