@@ -562,7 +562,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.584786, y: 1}
+    m_SensorSize: {x: 1.6307448, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1003,7 +1003,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.584786, y: 1}
+    m_SensorSize: {x: 1.6307448, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1499,6 +1499,7 @@ MonoBehaviour:
   - {fileID: 228895445}
   - {fileID: 538636496}
   - {fileID: 1033534480}
+  dayIndex: {fileID: 11400000, guid: 7696b0def010a734e94060036166c833, type: 2}
 --- !u!1 &1240289965
 GameObject:
   m_ObjectHideFlags: 3

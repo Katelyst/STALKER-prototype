@@ -15,7 +15,8 @@ public class Navigation : MonoBehaviour
 
     [SerializeField]
     private List<CinemachineVirtualCamera> virtualCamsInScene = new List<CinemachineVirtualCamera>();
-
+    [SerializeField]
+    private SDInt dayIndex; 
     private CinemachineVirtualCamera prevVCam;
 
     // just for scriptable data testing
@@ -35,6 +36,7 @@ public class Navigation : MonoBehaviour
         _input = GetComponent<PlayerInputs>();
         //SortCameras();
         prevVCam = virtualCamsInScene.ElementAt(0);
+        dayIndex.OnValueChangedEvent += ResetVCamPriority;
     }
 
     void Update()
@@ -77,7 +79,7 @@ public class Navigation : MonoBehaviour
         {
             _input.rightClick = false;
             //should add lock states for this, such as when reading letters etc. busy work tho
-            ResetVCamPriority();
+            ResetVCamPriority(0);
         }
         //SortCameras();
 
@@ -85,7 +87,7 @@ public class Navigation : MonoBehaviour
         // or could make scriptable data that holds keyvaluepair of vcam and index??
     }
 
-    public void ResetVCamPriority()
+    public void ResetVCamPriority(int i)
     {
         foreach(CinemachineVirtualCamera virtCam in virtualCamsInScene)
         {
