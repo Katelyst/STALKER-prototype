@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
+//using System.Reflection;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
 [System.Serializable]
@@ -12,22 +11,13 @@ public struct RenderFeatureToggle
     public bool isEnabled;
 }
 
-[ExecuteInEditMode]
+[ExecuteAlways]
 public class RenderFeatureToggler : MonoBehaviour
 {
-    private List<ScriptableRendererFeature> m_DisabledRenderFeatures = new List<ScriptableRendererFeature>();
-
     [SerializeField]
     private List<RenderFeatureToggle> renderFeatures = new List<RenderFeatureToggle>();
-    [SerializeField]
-    private UniversalRenderPipelineAsset pipelineAsset;
-
-    private void Awake()
-    {
-        
-
-        //DisableRenderFeature<ScriptableRendererFeature>(pipelineAsset);
-    }
+    //[SerializeField]
+    //private UniversalRenderPipelineAsset pipelineAsset;
 
     private void Update()
     {
@@ -37,51 +27,50 @@ public class RenderFeatureToggler : MonoBehaviour
             toggleObj.feature.SetActive(toggleObj.isEnabled);
         }
     }
-
-    private void DisableRenderFeature<T>(UniversalRenderPipelineAsset asset) where T : ScriptableRendererFeature
-    {
-        var renderFeature = asset.DisableRenderFeature<T>();
-
-        if (renderFeature != null)
-        {
-            m_DisabledRenderFeatures.Add(renderFeature);
-        }
-    }
 }
 
 
+    //private void DisableRenderFeature<T>(UniversalRenderPipelineAsset asset) where T : ScriptableRendererFeature
+    //{
+    //    var renderFeature = asset.DisableRenderFeature<T>();
 
-public static class UniversalRenderPipelineAssetExtensions
-{
-    public static ScriptableRendererFeature DisableRenderFeature<T>(this UniversalRenderPipelineAsset asset) where T : ScriptableRendererFeature
-    {
-        var type = asset.GetType();
-        var propertyInfo = type.GetField("m_RendererDataList", BindingFlags.Instance | BindingFlags.NonPublic);
+    //    if (renderFeature != null)
+    //    {
+    //        m_DisabledRenderFeatures.Add(renderFeature);
+    //    }
+    //}
 
-        if (propertyInfo == null)
-        {
-            return null;
-        }
+//public static class UniversalRenderPipelineAssetExtensions
+//{
+//    public static ScriptableRendererFeature DisableRenderFeature<T>(this UniversalRenderPipelineAsset asset) where T : ScriptableRendererFeature
+//    {
+//        var type = asset.GetType();
+//        var propertyInfo = type.GetField("m_RendererDataList", BindingFlags.Instance | BindingFlags.NonPublic);
+
+//        if (propertyInfo == null)
+//        {
+//            return null;
+//        }
 
 
-        var scriptableRenderData = (ScriptableRendererData[])propertyInfo.GetValue(asset);
+//        var scriptableRenderData = (ScriptableRendererData[])propertyInfo.GetValue(asset);
 
-        if (scriptableRenderData != null && scriptableRenderData.Length > 0)
-        {
-            foreach (var renderData in scriptableRenderData)
-            {
-                foreach (var rendererFeature in renderData.rendererFeatures)
-                {
-                    if (rendererFeature is T)
-                    {
-                        rendererFeature.SetActive(false);
+//        if (scriptableRenderData != null && scriptableRenderData.Length > 0)
+//        {
+//            foreach (var renderData in scriptableRenderData)
+//            {
+//                foreach (var rendererFeature in renderData.rendererFeatures)
+//                {
+//                    if (rendererFeature is T)
+//                    {
+//                        rendererFeature.SetActive(false);
 
-                        return rendererFeature;
-                    }
-                }
-            }
-        }
+//                        return rendererFeature;
+//                    }
+//                }
+//            }
+//        }
 
-        return null;
-    }
-}
+//        return null;
+//    }
+//}
