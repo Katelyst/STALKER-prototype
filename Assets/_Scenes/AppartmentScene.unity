@@ -562,7 +562,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5, y: 1}
+    m_SensorSize: {x: 1.2653722, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -953,6 +953,7 @@ GameObject:
   - component: {fileID: 893828715}
   - component: {fileID: 893828714}
   - component: {fileID: 893828713}
+  - component: {fileID: 893828717}
   m_Layer: 0
   m_Name: PS1EffectController
   m_TagString: Untagged
@@ -1033,6 +1034,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &893828717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893828712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a94798c374dc7b469465bfdd91b4676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderFeatures:
+  - feature: {fileID: -1925210268287778290, guid: cdd3b69f7b50915459ac3c9bd6cdd854, type: 2}
+    isEnabled: 0
+  - feature: {fileID: 2606515335583478340, guid: cdd3b69f7b50915459ac3c9bd6cdd854, type: 2}
+    isEnabled: 0
+  - feature: {fileID: 6965443398785072023, guid: cdd3b69f7b50915459ac3c9bd6cdd854, type: 2}
+    isEnabled: 0
+  pipelineAsset: {fileID: 11400000, guid: 2da9285bec814d7469b876f1967b2027, type: 2}
 --- !u!1 &1033534478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,7 +1116,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5, y: 1}
+    m_SensorSize: {x: 1.2653722, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
