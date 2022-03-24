@@ -4,7 +4,7 @@ using UnityEngine.Rendering;
 
 namespace PSX
 {
-    [ExecuteInEditMode]
+    [ExecuteAlways]
     public class FogController : MonoBehaviour
     {
         [SerializeField] protected VolumeProfile volumeProfile;

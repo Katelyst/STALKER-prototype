@@ -4,7 +4,7 @@ using UnityEngine.Rendering;
 
 namespace PSX
 {
-    [ExecuteInEditMode]
+    [ExecuteAlways]
     public class PixelationController : MonoBehaviour
     {
         [SerializeField] protected VolumeProfile volumeProfile;
