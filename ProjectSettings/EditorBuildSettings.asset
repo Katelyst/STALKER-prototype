@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Scenes/AppartmentScene.unity
+    guid: 19805f23d5881f949b189242306c498d
+  - enabled: 1
     path: Assets/_Scenes/TestScenes/FPSMovementTestScene.unity
     guid: b76041cb6eec24984bab3d88a57bb076
   m_configObjects:

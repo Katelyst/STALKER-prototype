@@ -37,6 +37,8 @@ public class Navigation : MonoBehaviour
         //SortCameras();
         prevVCam = virtualCamsInScene.ElementAt(0);
         dayIndex.OnValueChangedEvent += ResetVCamPriority;
+
+        Cursor.lockState = CursorLockMode.None;
     }
 
     void Update()
@@ -103,5 +105,11 @@ public class Navigation : MonoBehaviour
     void SortCameras()
     {
         virtualCamsInScene = virtualCamsInScene.OrderByDescending(x => x.Priority).ToList();
+    }
+
+    void OnDestroy()
+    {
+        dayIndex.OnValueChangedEvent -= ResetVCamPriority;
+
     }
 }

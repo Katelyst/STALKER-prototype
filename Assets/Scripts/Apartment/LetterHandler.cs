@@ -33,6 +33,7 @@ public class LetterHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dayIndex.Value = 0; //set to 0, because scriptable objects store data offline
         UpdateText(dayIndex.Value);
         clickLetterPileEvent.OnScriptableEvent += ShowEnvelope;
         OpenLetterEvent.OnScriptableEvent += OpenLetter;
@@ -73,7 +74,22 @@ public class LetterHandler : MonoBehaviour
     private void UpdateText(int newDay)
     {
         Debug.Log("Update text now");
+        
+        //limit day count
+        if(newDay > texts.Count)
+        {
+            dayIndex.Value = 0;
+            newDay = 0;
+        }
+
         envelopeText.text = texts[newDay].letterSender[0];
         letterText.text = texts[newDay].letters[0];
+    }
+
+    void OnDestroy()
+    {
+        clickLetterPileEvent.OnScriptableEvent -= ShowEnvelope;
+        OpenLetterEvent.OnScriptableEvent -= OpenLetter;
+        dayIndex.OnValueChangedEvent -= DayChanged;
     }
 }
