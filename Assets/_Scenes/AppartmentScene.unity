@@ -371,7 +371,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8606061, y: 1}
+    m_SensorSize: {x: 1.600866, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -699,7 +699,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8606061, y: 1}
+    m_SensorSize: {x: 1.600866, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1013,10 +1013,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 192155555}
     m_Modifications:
+    - target: {fileID: 1081800247, guid: 2c442287bd16ee54cb00dd8509ca8fa3, type: 3}
+      propertyPath: m_text
+      value: Elektro Mail
+      objectReference: {fileID: 0}
     - target: {fileID: 1246288343, guid: 2c442287bd16ee54cb00dd8509ca8fa3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1239302745}
+    - target: {fileID: 1997988805, guid: 2c442287bd16ee54cb00dd8509ca8fa3, type: 3}
+      propertyPath: m_DirectAudioVolumes.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779916148065333839, guid: 2c442287bd16ee54cb00dd8509ca8fa3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779916148065333839, guid: 2c442287bd16ee54cb00dd8509ca8fa3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7517217552348350249, guid: 2c442287bd16ee54cb00dd8509ca8fa3, type: 3}
       propertyPath: m_Name
       value: Placeholder_PC
@@ -1521,7 +1537,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8606061, y: 1}
+    m_SensorSize: {x: 1.600866, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
